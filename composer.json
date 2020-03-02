@@ -1,0 +1,48 @@
+{
+    "name": "lasallesoftware/lsv2-contactformbackend-pkg",
+    "description": "LaSalle Software v2 Contact Form Back-end Package.",
+    "keywords": [
+        "lasalle software",
+        "south lasalle",
+        "bob bloom",
+        "package",
+        "laravel"
+    ],
+    "homepage": "https://lasallesoftware.ca",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bob Bloom",
+            "email": "bob.bloom@lasallesoftware.ca",
+            "homepage": "https://LasalleSoftware.ca",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lasallesoftware\\Contactformbackend\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lasallesoftware\\Contactform\\ContactformbackendServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "suggest": {
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
