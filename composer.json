@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lasallesoftware\\Contactform\\ContactformbackendServiceProvider"
+                "Lasallesoftware\\Contactformbackend\\ContactformbackendServiceProvider"
             ]
         }
     },
