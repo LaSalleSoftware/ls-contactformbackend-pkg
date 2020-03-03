@@ -26,9 +26,15 @@ namespace Lasallesoftware\Contactformbackend;
 // https://github.com/laravel/framework/blob/5.6/src/Illuminate/Support/ServiceProvider.php
 use Illuminate\Support\ServiceProvider;
 
+// Laravel Nova class
+use Laravel\Nova\Nova;
+
 
 class ContactformbackendServiceProvider extends ServiceProvider
 {
+    use ContactformbackendPoliciesServiceProvider;
+
+
     /**
      * Register any application services.
      *
@@ -42,7 +48,19 @@ class ContactformbackendServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerNovaResources();
+    }
+
+    /**
+     * Register the Nova resources for this package.
+     *
+     * @return void
+     */
+    protected function registerNovaResources()
+    {
+        Nova::resources([
+            \Lasallesoftware\Contactformbackend\Nova\Resources\Contact_form::class,
+        ]);
     }
 
 
@@ -60,6 +78,8 @@ class ContactformbackendServiceProvider extends ServiceProvider
     {
         $this->loadMigrations();
         $this->loadTranslations();
+
+        $this->registerPolicies();
     }
 
     /**
@@ -78,5 +98,5 @@ class ContactformbackendServiceProvider extends ServiceProvider
     protected function loadTranslations()
     {
         $this->loadTranslationsFrom(__DIR__ . '/../translations/', 'lasallesoftwarecontactformbackend');
-    }    
+    }
 }

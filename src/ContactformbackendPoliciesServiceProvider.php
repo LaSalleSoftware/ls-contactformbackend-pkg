@@ -20,58 +20,40 @@
  *
  */
 
-namespace Lasallesoftware\Contactformbackend;
+namespace Lasallesoftware\contactformbackend;
 
-class Version
+// Laravel class
+use Illuminate\Support\Facades\Gate;
+
+/**
+ * Trait ContactformbackendPoliciesServiceProvider
+ *
+ * Adapted from https://github.com/laravel/framework/blob/5.8/src/Illuminate/Foundation/Support/Providers/AuthServiceProvider.php
+ *
+ * @package Lasallesoftware\Contactformbackend
+ */
+trait ContactformbackendPoliciesServiceProvider
 {
     /**
-     * This package's version number.
+     * Register the application's policies.
      *
-     * @var string
+     * @return void
      */
-    const VERSION = '2.0.0';
-
-    /**
-     * This package's release date.
-     *
-     * @var string
-     */
-    const RELEASEDATE = 'March 02, 2020';
-
-    /**
-     * This package's name.
-     *
-     * @var string
-     */
-    const PACKAGE = 'LaSalle Software v2 Content Form Back-end Package';
-
-    /**
-     * Get the version number of this package.
-     *
-     * @return string
-     */
-    public function version()
+    public function registerPolicies()
     {
-        return static::VERSION;
+        foreach ($this->policies() as $key => $value) {
+            Gate::policy($key, $value);
+        }
     }
-
     /**
-     * Get the release date of this package.
+     * Get the policies defined on the provider.
      *
-     * @return string
+     * @return array
      */
-    public function releasedate()
+    public function policies()
     {
-        return static::RELEASEDATE;
-    }
-
-    /**
-     * Get the name of this package.
-     *
-     * @return string
-     */
-    public function packageName()
-    {
-        return static::PACKAGE;
+        return [
+            'Lasallesoftware\Contactformbackend\Models\Contact_form' => 'Lasallesoftware\Contactformbackend\Policies\Contact_formPolicy',
+        ];
     }
 }
