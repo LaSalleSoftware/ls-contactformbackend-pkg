@@ -26,6 +26,12 @@ namespace Lasallesoftware\Contactformbackend\Http\Controllers;
 use Lasallesoftware\Contactformbackend\Models\Contact_form;
 use Lasallesoftware\Library\Common\Http\Controllers\CommonController;
 
+// Laravel
+use Illuminate\Support\Facades\Request;
+
+// Third party class
+use Carbon\Carbon;
+
 /**
  * Class CreateDatabaseRecordController
  *
@@ -34,21 +40,25 @@ use Lasallesoftware\Library\Common\Http\Controllers\CommonController;
 class CreateDatabaseRecordController extends CommonController
 {
     public function HandleCreateDatabaseRecord(Contact_form $contact_form)
-    {
-        $data['installed_domain_id'] = 1;
-        //$data['personbydomain_id'] = ;
-        $data['first_name'] = 'Ed';
-        $data['surname'] = 'Oliver';
-        $data['email'] = 'eddie@beast.com';
-        $data['message'] = 'a little message from your controller!';
-        //$data[''] = ;
-        //$data[''] = ;
-        $result = $contact_form->createNewContactformRecord($data);
+    { 
+        $postData['installed_domain_id'] = $_POST["installed_domain_id"];
+
+        // The method that gets the personbydomain_id, Lasallesoftware\Contactformfrontend\Http\Controllers::getPersonbydomainId(),
+        // returns 0 when no personbydomain_id is found. The reason is that an actual value must be transmitted via the post request. 
+        // A null value, or a blank value, does not transmit. So I use the value "0" to denote a null value.
+
+        $postData['personbydomain_id']   = ($_POST["personbydomain_id"] == 0) ? null : $_POST["personbydomain_id"];
+        $postData['first_name']          = $_POST["first_name"];
+        $postData['surname']             = $_POST["surname"];
+        $postData['email']               = $_POST["email"];
+        $postData['message']             = $_POST["comment"];
+        $postData['uuid']                = $_POST["uuid"];
+        $postData['created_at']          = Carbon::now(null);
+
+        $result = $contact_form->createNewContactformRecord($postData);
 
         return response()->json([
             'result' => $result,
         ], 200);
-
-
     }
 }

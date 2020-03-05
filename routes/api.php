@@ -23,6 +23,6 @@
 
 Route::middleware(['jwt_auth'], 'throttle:60,1')
     ->group(function () {
-        Route::get('/api/v1/contactform/createdatabaserecord', 'Lasallesoftware\Contactformbackend\Http\Controllers\CreateDatabaseRecordController@HandleCreateDatabaseRecord');
+        Route::post('/api/v1/contactform/createdatabaserecord', 'Lasallesoftware\Contactformbackend\Http\Controllers\CreateDatabaseRecordController@HandleCreateDatabaseRecord');
     }
 );

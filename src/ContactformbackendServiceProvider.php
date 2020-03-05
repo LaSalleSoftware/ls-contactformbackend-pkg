@@ -76,10 +76,21 @@ class ContactformbackendServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadRoutes();
         $this->loadMigrations();
         $this->loadTranslations();
 
         $this->registerPolicies();
+    }
+
+    /**
+     * Load this package's routes
+     *
+     * @return void
+     */
+    protected function loadRoutes()
+    {
+        $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
     }
 
     /**

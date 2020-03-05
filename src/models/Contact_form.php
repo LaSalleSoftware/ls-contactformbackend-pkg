@@ -46,12 +46,7 @@ class Contact_form extends CommonModel
      * Which fields may be mass assigned
      * @var array
      */
-    protected $fillable = [
-        'first_name',
-        'surname',
-        'email',
-        'message',
-    ];
+    protected $fillable = ['*'];
 
     /**
      * The attributes that should be cast to native types.
@@ -109,14 +104,14 @@ class Contact_form extends CommonModel
     {
         $contactform = new Contact_form;
 
-        $contactform->personbydomains_id = $data['personbydomains_id'] ?? null;
-        $contactform->first_name         = $data['first_name'];
-        $contactform->surname            = $data['surname'];
-        $contactform->email              = $data['email'];
-        $contactform->message            = $data['comment'];
-        $contactform->uuid               = $data['uuid'] ?? NULL;
-        $contactform->created_at         = Carbon::now(null);
-        $contactform->created_by         = $data['created_by'] ?? 1;
+        $contactform->installed_domain_id = $data['installed_domain_id'];
+        $contactform->personbydomain_id   = $data['personbydomain_id'];
+        $contactform->first_name          = $data['first_name'];
+        $contactform->surname             = $data['surname'];
+        $contactform->email               = $data['email'];
+        $contactform->message             = $data['message'];
+        $contactform->uuid                = $data['uuid'] ?: null;
+        $contactform->created_at          = Carbon::now(null);
 
         if ($contactform->save()) {
             // Return the new ID
