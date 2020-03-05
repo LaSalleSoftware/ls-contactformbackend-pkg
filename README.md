@@ -8,6 +8,8 @@
 
 Contact Form Back-end package for my LaSalle Software Version 2.
 
+Please refer to the contact form's front-end package's README.md for more info. 
+
 ## Security
 
 If you discover any security related issues, please email Bob Bloom at "bob dot bloom at lasallesoftware dot ca" instead of using the issue tracker.
