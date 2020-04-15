@@ -20,7 +20,7 @@
  *
  */
 
-namespace Lasallesoftware\Contactformbackend\Models;
+namespace Lasallesoftware\Contactformbackend\models;
 
 // LaSalle Software
 use Lasallesoftware\Library\Common\Models\CommonModel;
