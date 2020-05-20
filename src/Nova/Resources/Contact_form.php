@@ -26,8 +26,8 @@
  * @author     Bob Bloom
  * @email      bob.bloom@lasallesoftware.ca
  * @link       https://lasallesoftware.ca
- * @link       https://packagist.org/packages/lasallesoftware/lsv2-contactformbackend-pkg
- * @link       https://github.com/LaSalleSoftware/lsv2-contactformbackend-pkg
+ * @link       https://packagist.org/packages/lasallesoftware/ls-contactformbackend-pkg
+ * @link       https://github.com/LaSalleSoftware/ls-contactformbackend-pkg
  *
  */
 
