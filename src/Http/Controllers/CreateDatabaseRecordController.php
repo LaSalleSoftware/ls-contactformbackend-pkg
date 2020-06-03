@@ -61,6 +61,7 @@ class CreateDatabaseRecordController extends CommonController
 
     public function HandleCreateDatabaseRecord(Contact_form $contact_form)
     {
+        // Create a UUID
         $comment = 'Lasallesoftware\Contactformbackend\Http\Controllers\HandleCreateDatabaseRecordInsert - insert the contact form submission data into the database.';
         $uuid = $this->uuidgenerator->createUuid(11, $comment, 1);
 
