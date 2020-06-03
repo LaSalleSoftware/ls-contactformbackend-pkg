@@ -34,7 +34,7 @@
 namespace Lasallesoftware\Contactformbackend\Nova\Resources;
 
 // LaSalle Software classes
-use Lasallesoftware\Library\Authentication\Models\Personbydomain as Personbydomainmodel;
+use Lasallesoftware\Librarybackend\Authentication\Models\Personbydomain as Personbydomainmodel;
 use Lasallesoftware\Novabackend\Nova\Fields\Comments;
 use Lasallesoftware\Novabackend\Nova\Fields\CreatedAt;
 use Lasallesoftware\Novabackend\Nova\Resources\BaseResource;
@@ -137,7 +137,7 @@ class Contact_form extends BaseResource
         return [
             ID::make()->sortable(),
 
-            Text::make(__('lasallesoftwarelibrary::general.resource_label_singular_installed_domains'), 'installed_domain_id')
+            Text::make(__('lasallesoftwarelibrarybackend::general.resource_label_singular_installed_domains'), 'installed_domain_id')
                 ->displayUsing(function ($text) {
                     return DB::table('installed_domains')->where('id', $text)->pluck('title')->first();
                 })
@@ -149,23 +149,23 @@ class Contact_form extends BaseResource
                 ->format('MMMM DD, YYYY, h:mma')
             ,
 
-            Text::make(__('lasallesoftwarelibrary::general.field_name_first_name'), 'first_name')
+            Text::make(__('lasallesoftwarelibrarybackend::general.field_name_first_name'), 'first_name')
                 ->hideFromIndex()
             ,
 
-            Text::make(__('lasallesoftwarelibrary::general.field_name_surname'), 'surname')
+            Text::make(__('lasallesoftwarelibrarybackend::general.field_name_surname'), 'surname')
                 ->hideFromIndex()
             ,
 
-            Text::make(__('lasallesoftwarelibrary::general.field_name_email'), 'email')
+            Text::make(__('lasallesoftwarelibrarybackend::general.field_name_email'), 'email')
                 ->sortable()
             ,
 
-            Text::make(__('lasallesoftwarelibrary::general.field_name_comments'), 'message')
+            Text::make(__('lasallesoftwarelibrarybackend::general.field_name_comments'), 'message')
                 ->hideFromIndex()
             ,
 
-            Text::make(__('lasallesoftwarelibrary::general.field_name_comments'), 'message')
+            Text::make(__('lasallesoftwarelibrarybackend::general.field_name_comments'), 'message')
                 ->onlyOnIndex()
                 ->displayUsing(function ($text) {
                     if (strlen($text) > 30) {

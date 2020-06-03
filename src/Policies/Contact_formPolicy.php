@@ -24,14 +24,14 @@ namespace Lasallesoftware\Contactformbackend\Policies;
 
 // LaSalle Software classes
 use Lasallesoftware\Contactformbackend\Models\Contact_form as Model;
-use Lasallesoftware\Library\Common\Policies\CommonPolicy;
-use Lasallesoftware\Library\Authentication\Models\Personbydomain as User;
+use Lasallesoftware\Librarybackend\Common\Policies\CommonPolicy;
+use Lasallesoftware\Librarybackend\Authentication\Models\Personbydomain as User;
 
 // Laravel class
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 /**
- * Class PostPolicy
+ * Class Contact_formPolicy
  *
  * @package Lasallesoftware\Contactformbackend\Policies
  */
@@ -42,8 +42,8 @@ class Contact_formPolicy extends CommonPolicy
     /**
      * Determine whether the user can view the post details.
      *
-     * @param  \Lasallesoftware\Library\Authentication\Models\Personbydomain  $user
-     * @param  \Lasallesoftware\Contactformbackend\Models\Contact_form        $model
+     * @param  \Lasallesoftware\Librarybackend\Authentication\Models\Personbydomain  $user
+     * @param  \Lasallesoftware\Contactformbackend\Models\Contact_form               $model
      * @return bool
      */
     public function view(User $user, Model $model)
@@ -88,8 +88,8 @@ class Contact_formPolicy extends CommonPolicy
     /**
      * Determine whether the user can delete the posts.
      *
-     * @param  \Lasallesoftware\Library\Authentication\Models\Personbydomain  $user
-     * @param  \Lasallesoftware\Contactformbackend\Models\Contact_form        $model
+     * @param  \Lasallesoftware\Librarybackend\Authentication\Models\Personbydomain  $user
+     * @param  \Lasallesoftware\Contactformbackend\Models\Contact_form               $model
      * @return bool
      */
     public function delete(User $user, Model $model)

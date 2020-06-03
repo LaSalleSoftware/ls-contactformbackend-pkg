@@ -23,7 +23,7 @@
 namespace Lasallesoftware\Contactformbackend\Models;
 
 // LaSalle Software
-use Lasallesoftware\Library\Common\Models\CommonModel;
+use Lasallesoftware\Librarybackend\Common\Models\CommonModel;
 
 // Third party class
 use Carbon\Carbon;

@@ -24,7 +24,7 @@ namespace Lasallesoftware\Contactformbackend\Http\Controllers;
 
 // LaSalle Software
 use Lasallesoftware\Contactformbackend\Models\Contact_form;
-use Lasallesoftware\Library\Common\Http\Controllers\CommonController;
+use Lasallesoftware\Librarybackend\Common\Http\Controllers\CommonController;
 
 // Laravel
 use Illuminate\Support\Facades\Request;
