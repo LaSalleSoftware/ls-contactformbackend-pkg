@@ -1,14 +1,16 @@
 # CHANGE LOG
 
-## VERSION 2.1.2 (coming!)
+## VERSION 2.2.1 (coming!)
+
+## VERSION 2.2.0 (June 15, 2020)
+* [v2.2.0 issues](https://github.com/LaSalleSoftware/ls-contentformbackend-pkg/milestone/5?closed=1)
 
 ## VERSION 2.1.0 (May 30, 2020)
-
-* [v2.1.1 issues](https://github.com/LaSalleSoftware/ls-contentformbackend-pkg/milestone/11?closed=1)
+* [v2.1.1 issues](https://github.com/LaSalleSoftware/ls-contentformbackend-pkg/milestone/4?closed=1)
 
 ## VERSION 2.1.0 (May 04, 2020)
 Note: This is the first LaSalle Software release for the Laravel Framework series 7.x.
-* [v2.1.0 issues](https://github.com/LaSalleSoftware/ls-contentformbackend-pkg/milestone/10?closed=1)
+* [v2.1.0 issues](https://github.com/LaSalleSoftware/ls-contentformbackend-pkg/milestone/3?closed=1)
 
 ## VERSION 2.0.1 (April 19, 2020)
 Note: This is the final LaSalle Software release for the Laravel Framework series 6.x.
