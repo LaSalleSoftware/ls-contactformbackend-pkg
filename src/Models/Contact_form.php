@@ -84,7 +84,7 @@ class Contact_form extends CommonModel
      */
     public function personbydomain()
     {
-        return $this->belongsTo('Lasallesoftware\Library\Authentication\Models\Personbydomain', 'personbydomain_id', 'id');
+        return $this->belongsTo('Lasallesoftware\Librarybackend\Authentication\Models\Personbydomain', 'personbydomain_id', 'id');
     }
 
 
