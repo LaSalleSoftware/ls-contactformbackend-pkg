@@ -146,7 +146,7 @@ class Contact_form extends BaseResource
 
             DateTime::make(__('lasallesoftwarecontactformbackend::contactformbackend.field_name_created_at'), 'created_at')
                 ->sortable()
-                ->format('MMMM DD, YYYY, h:mma')
+                // ->format('MMMM DD, YYYY, h:mma') ==> not work in Nova5, issue #27
             ,
 
             Text::make(__('lasallesoftwarelibrarybackend::general.field_name_first_name'), 'first_name')
