@@ -1,5 +1,8 @@
 # CHANGE LOG
 
+## VERSION 3.1 (July 04, 2025)
+* [v3.1 issues](https://github.com/LaSalleSoftware/ls-contentformbackend-pkg/milestone/13?closed=1)
+
 ## VERSION 3.0 (June 22, 2025)
 * [v3.0 issues](https://github.com/LaSalleSoftware/ls-contentformbackend-pkg/milestone/12?closed=1)
 
