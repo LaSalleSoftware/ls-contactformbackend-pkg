@@ -51,11 +51,9 @@ class CreateContactformTable extends BaseMigration
 
                 $table->increments('id');
 
-                $table->integer('installed_domain_id')->unsigned()->comment('The domain.');
-                $table->foreign('installed_domain_id')->references('id')->on('installed_domains');
+                $this->createForeignIdFieldAndReference('installed_domains', 'id', 'installed_domain_id', $table, false);
 
-                $table->integer('personbydomain_id')->unsigned()->nullable();
-                $table->foreign('personbydomain_id')->references('id')->on('personbydomains');
+                $this->createForeignIdFieldAndReference('personbydomains', 'id', 'personbydomain_id', $table, false);
 
                 $table->string('first_name')->nullable();
                 $table->string('surname')->nullable();
