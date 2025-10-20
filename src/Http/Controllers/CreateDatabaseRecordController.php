@@ -97,7 +97,7 @@ class CreateDatabaseRecordController extends CommonController
             ->get()
         ;
 
-        return ($result->isEmpty()) ? null : $result[0]->id;
+        return ($result->isEmpty()) ? 1 : $result[0]->id;
     }
     
     /**
